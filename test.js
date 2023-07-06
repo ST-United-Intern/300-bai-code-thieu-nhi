@@ -38,22 +38,25 @@ const findFirstPositiveEven = nums.find((value) => {
   }
 });
 
-// function check_odd_even(n) {
-//   let flag = 1;
-//   if (n % 2 == 0) flag = 0;
-//   return flag;
-// }
+//ARRAY-FIND-04: Tìm số âm lẻ cuối cùng trong mảng
+function check_odd_even(n) {
+  let flag = 1;
+  if (n % 2 == 0) flag = 0;
+  return flag;
+}
 
-// /*Tạo hàm tìm số chẵn cuối cùng trong mảng JavaScript*/
-// function findLastPositiveEven(array) {
-//   for (let i = array.length - 1; i >= 0; i--) {
-//     if (check_odd_even(array[i]) == 1) return array[i];
-//   }
-// }
+function findLastPositiveEven(array) {
+  arrays.find((arr) => {
+    arr < 0;
+  });
+  for (let i = array.length - 1; i >= 0; i--) {
+    if (check_odd_even(array[i]) == 1) return array[i];
+  }
+}
 
-// let arrays = [5, 4, 6, 7, 2, 8];
+let arrays = [-5, 4, 6, -7, 2, 8, -9];
 
-// console.log("Số lẻ cuối cùng: ", findLastPositiveEven(arrays));
+console.log("Số lẻ cuối cùng: ", findLastPositiveEven(arrays));
 
 //ARRAY-FIND-14: Tìm sản phầm đầu tiên có free ship
 const productList = [
@@ -75,13 +78,6 @@ const hasOddNumberDivisibleBy3 = oddNumber.every((arr) => {
 });
 console.log(`Mảng này có chia hết cho 3 không? : ${hasOddNumberDivisibleBy3}`);
 
-// const truthy = [];
-
-// const hasTruthy = truthy.some((arr) => {
-//   return arr == true;
-// });
-// console.log(hasTruthy);
-
 //ARRAY-CHECK-07: Kiểm tra có student giới tính là Nữ tên Alice không
 const studentList = [
   { id: 1, name: "Alice", gender: "male" },
@@ -95,3 +91,43 @@ const hasAlice = studentList.some((arr, i) => {
   }
 });
 console.log(hasAlice);
+
+// const productItems = [
+//   { id: 1, name: "Iphone 16", isFreeShip: false, price: 10200500 },
+//   { id: 2, name: "Iphone 16 Pro Max", isFreeShip: false, price: 1500000 },
+//   {
+//     id: 3,
+//     name: "Iphone 13 Pro Max",
+//     isFreeShip: false,
+//     price: 15000,
+//   },
+// ];
+// const hasFreeShip = productItems.reduce((arr, index) => {
+//   //   arr.isFreeShip === true;
+//   return arr < index && arr >= 0 ? arr : index;
+// });
+// console.log(hasFreeShip);
+
+function findSecondLargestNumber(n) {
+  let flag = 0;
+  let i = 0;
+  while (i <= n) {
+    if (Math.pow(i, 2) == n) {
+      flag = 1;
+      break;
+    }
+    i++;
+  }
+  return flag;
+}
+
+let array3 = [5, 4, 16, 2, 8, 7, 3];
+
+for (let i = array3.length - 1; i >= 0; --i) {
+  let x = array3[i];
+  let check = findSecondLargestNumber(x);
+  if (check == 1) {
+    console.log(`Số chính phương cuối cùng là: ${array3[i]}`);
+    break;
+  }
+}
